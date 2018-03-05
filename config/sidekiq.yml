@@ -1,0 +1,4 @@
+:schedule:
+  scrap_apartments:
+    cron: '*/5 * * * *'
+    class: ScrapApartments
