@@ -35,7 +35,7 @@ services:
     build: .
     command: bash start
     ports:
-      - '3000:3000'
+      - '3001:3000'
     volumes:
       - '.:/apartment-finder'
     volumes_from:

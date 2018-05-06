@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module ApartmentFinder
   class Application < Rails::Application
+    config.active_job.queue_adapter = :sidekiq
     config.autoload_paths += %W[
       #{config.root}/lib
     ]
