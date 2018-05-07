@@ -10,17 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306025727) do
-
+ActiveRecord::Schema.define(version: 20_180_306_025_727) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "apartment_links", force: :cascade do |t|
-    t.string   "link"
-    t.boolean  "sent"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["link"], name: "index_apartment_links_on_link", unique: true, using: :btree
+  create_table 'apartment_links', force: :cascade do |t|
+    t.string   'link'
+    t.boolean  'sent'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['link'], name: 'index_apartment_links_on_link', unique: true, using: :btree
   end
-
 end
