@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Scrapers::ImovirtualApartmentLinkScraper do
@@ -66,9 +68,9 @@ RSpec.describe Scrapers::ImovirtualApartmentLinkScraper do
     ]
   end
 
-  describe '#get_links' do
+  describe '#find_links' do
     it 'returns apartments links from page' do
-      expect(subject.get_links).to eq(expected_links)
+      expect(subject.find_links).to eq(expected_links)
     end
   end
 end

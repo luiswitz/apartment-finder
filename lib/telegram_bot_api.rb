@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'telegram/bot'
 
 class TelegramBotApi
-  TOKEN = ENV['TELEGRAM_BOT_TOKEN'] 
+  TOKEN = ENV['TELEGRAM_BOT_TOKEN']
   CHAT_ID = ENV['CHAT_ID']
 
   def self.send_message(text)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Scrapers
   class ImovirtualApartmentLinkScraper
     URL = 'https://www.imovirtual.com/arrendar/apartamento/porto/?search' \
@@ -9,7 +11,7 @@ module Scrapers
       @html = html
     end
 
-    def get_links
+    def find_links
       page.search('a[data-tracking="click_body"]').map do |link|
         link['href']
       end
@@ -18,9 +20,7 @@ module Scrapers
     private
 
     def page
-      if @html
-        return Nokogiri::HTML(@html)
-      end
+      return Nokogiri::HTML(@html) if @html
 
       Nokogiri::HTML(open(URL))
     end

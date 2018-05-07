@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Scrapers::ApartmentLinkScraper do
@@ -15,12 +17,12 @@ RSpec.describe Scrapers::ApartmentLinkScraper do
 
   let(:expected_links) { ['link-1', 'link-2'] }
 
-  describe '#get_links' do
+  describe '#find_links' do
     it 'returns apartments links' do
-      allow(custom_scraper_1).to receive(:get_links).and_return('link-1')
-      allow(custom_scraper_2).to receive(:get_links).and_return('link-2')
+      allow(custom_scraper_1).to receive(:find_links).and_return('link-1')
+      allow(custom_scraper_2).to receive(:find_links).and_return('link-2')
 
-      expect(subject.get_links).to eq(expected_links)
+      expect(subject.find_links).to eq(expected_links)
     end
   end
 end

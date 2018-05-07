@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'sidekiq-scheduler'
 
 class ScrapApartments
@@ -24,7 +26,6 @@ class ScrapApartments
       rescue
         next
       end
-
     end
   end
 end
