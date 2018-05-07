@@ -13,7 +13,7 @@ class ScrapApartments
       ]
     )
 
-    links = scraper.get_links
+    links = scraper.find_links
 
     links.map do |link|
       apartment_link = ApartmentLink.new(link: link)
