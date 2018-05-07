@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Scrapers::CustoJustoApartmentLinkScraper do
   subject { described_class.new(html) }
 
-  let(:html) { File.read("#{fixture_path}/custo_justo.html")}
+  let(:html) { File.read("#{fixture_path}/custo_justo.html") }
 
   let(:expected_links) do
     [
@@ -46,14 +48,13 @@ RSpec.describe Scrapers::CustoJustoApartmentLinkScraper do
       'https://www.custojusto.pt/porto/apartamentos/t2-mobilado-em-alfena-ermesinde-25658243',
       'https://www.custojusto.pt/porto/apartamentos/t1-junto-maia-jardim-maia-15-meses-de-uso-25654226',
       'https://www.custojusto.pt/porto/apartamentos/apartamento-25652858',
-      'https://www.custojusto.pt/porto/apartamentos/t1-gulpilhares-25652361',
+      'https://www.custojusto.pt/porto/apartamentos/t1-gulpilhares-25652361'
     ]
   end
 
-  describe '#get_links' do
+  describe '#find_links' do
     it 'return links from page' do
-      expect(subject.get_links).to eq(expected_links)
+      expect(subject.find_links).to eq(expected_links)
     end
   end
-
 end
