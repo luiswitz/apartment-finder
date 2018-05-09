@@ -1,24 +1,6 @@
-# README
+# Apartment Finder
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a WIP project. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The main goal here is to help people to find an apartment to rent in Porto, Portugal.
+The method to achieve that is scraping the main websites and sending the links through Telegram (for now).
