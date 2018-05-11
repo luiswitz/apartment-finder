@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'open-uri'
 
 module Scrapers
@@ -25,4 +27,3 @@ module Scrapers
     end
   end
 end
-
