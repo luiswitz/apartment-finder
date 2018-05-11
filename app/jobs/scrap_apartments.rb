@@ -9,7 +9,8 @@ class ScrapApartments
     scraper = Scrapers::ApartmentLinkScraper.new(
       scrapers: [
         Scrapers::CustoJustoApartmentLinkScraper.new,
-        Scrapers::ImovirtualApartmentLinkScraper.new
+        Scrapers::ImovirtualApartmentLinkScraper.new,
+        Scrapers::OlxApartmentLinkScraper.new
       ]
     )
 
