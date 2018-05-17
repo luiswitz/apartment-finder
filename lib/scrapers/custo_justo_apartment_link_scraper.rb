@@ -2,7 +2,6 @@
 
 module Scrapers
   class CustoJustoApartmentLinkScraper < ApartmentLinkScraperTemplate
-
     private
 
     def anchor_link

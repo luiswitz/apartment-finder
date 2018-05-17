@@ -2,7 +2,6 @@
 
 module Scrapers
   class ImovirtualApartmentLinkScraper < ApartmentLinkScraperTemplate
-
     private
 
     def anchor_link

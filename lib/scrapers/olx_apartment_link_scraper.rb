@@ -2,7 +2,6 @@
 
 module Scrapers
   class OlxApartmentLinkScraper < ApartmentLinkScraperTemplate
-
     private
 
     def anchor_link
