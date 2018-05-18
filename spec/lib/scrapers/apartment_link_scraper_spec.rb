@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe Scrapers::ApartmentLinkScraper do
   let(:custom_scraper_1) { double(:custom_scraper_1) }
