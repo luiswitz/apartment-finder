@@ -20,6 +20,7 @@ gem 'sidekiq-scheduler'
 gem 'telegram-bot-ruby'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+gem 'nurse-rb'
 
 group :development, :test do
   gem 'byebug', platform: :mri

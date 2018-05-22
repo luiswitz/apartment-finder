@@ -14,6 +14,8 @@ class ScrapApartments
       ]
     )
 
+    # scraper = Dependencies.new.get('apartment_scraper_service')
+
     links = scraper.find_links
 
     links.map do |link|
