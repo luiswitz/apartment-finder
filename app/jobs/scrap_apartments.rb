@@ -6,13 +6,7 @@ class ScrapApartments
   include Sidekiq::Worker
 
   def perform
-    scraper = Scrapers::ApartmentLinkScraper.new(
-      scrapers: [
-        Scrapers::CustoJustoApartmentLinkScraper.new,
-        Scrapers::ImovirtualApartmentLinkScraper.new,
-        Scrapers::OlxApartmentLinkScraper.new
-      ]
-    )
+    scraper = Dependencies.new.get('apartment_scraper_service')
 
     links = scraper.find_links
 
