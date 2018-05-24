@@ -13,6 +13,8 @@ module ApartmentFinder
     config.active_job.queue_adapter = :sidekiq
     config.autoload_paths += %W[
       #{config.root}/lib
+      #{config.root}/api/services
+      #{config.root}/api/factories
       #{config.root}/api
     ]
   end
