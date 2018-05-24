@@ -9,6 +9,6 @@ class ApartmentScraperServiceFactory < ServiceFactory
       Scrapers::OlxApartmentLinkScraper.new
     ]
 
-    ApartmentScraperService.new(scrapers: scrapers)
+    Services::ApartmentScraperService.new(scrapers: scrapers)
   end
 end
