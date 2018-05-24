@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # load first
 require 'api/factories/service_factory'
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe Services::ApartmentScraperService do
@@ -6,7 +8,7 @@ RSpec.describe Services::ApartmentScraperService do
 
   subject do
     described_class.new(
-      scrapers:[
+      scrapers: [
         scraper1,
         scraper2
       ]
@@ -14,7 +16,7 @@ RSpec.describe Services::ApartmentScraperService do
   end
 
   describe '#find_links' do
-    let(:expected_links) { ['link1', 'link2'] }
+    let(:expected_links) { %w[link1 link2] }
 
     it 'returns links' do
       allow(scraper1).to receive(:find_links)

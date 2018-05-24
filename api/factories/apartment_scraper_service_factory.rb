@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class ApartmentScraperServiceFactory < ServiceFactory
   key 'apartment_scraper_service'
   share true
-  
-  def create_service(dependencies)
+
+  def create_service(_dependencies)
     scrapers = [
       Scrapers::CustoJustoApartmentLinkScraper.new,
       Scrapers::ImovirtualApartmentLinkScraper.new,

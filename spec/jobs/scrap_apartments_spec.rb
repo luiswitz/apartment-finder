@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe ScrapApartments, type: :job do
@@ -7,7 +9,7 @@ RSpec.describe ScrapApartments, type: :job do
 
   let(:job) { subject.perform_later }
 
-  #TODO: Fix those examples
+  # TODO: Fix those examples
   xdescribe '#perform' do
     it 'queues the job' do
       expect(job).to have_enqueued_sidekiq_job('ScrapApartments')
