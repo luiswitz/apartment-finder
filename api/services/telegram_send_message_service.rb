@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Services
   class TelegramSendMessageService
     def initialize(adapter:, storage:)

@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'telegram/bot'
 
 module Adapters
   class TelegramBotAdapter
     def initialize(telegram_bot_client: Telegram::Bot::Client, token:, chat_id:)
-      @telegram_bot_client = telegram_bot_client 
+      @telegram_bot_client = telegram_bot_client
       @token = token
       @chat_id = chat_id
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe Services::TelegramSendMessageService do
@@ -13,13 +15,13 @@ RSpec.describe Services::TelegramSendMessageService do
     it 'delegates send message to the adapter' do
       allow(storage).to receive(:save)
         .with(message)
-       
+
       expect(adapter).to receive(:send_message)
         .with(message).and_yield
 
       subject.send_message(message)
     end
-    
+
     it 'saves the message' do
       allow(adapter).to receive(:send_message)
         .with(message).and_yield

@@ -6,7 +6,7 @@ RSpec.describe ScrapApartments, type: :job do
   subject { described_class.new }
 
   let(:perform) { subject.perform }
-  
+
   let(:apartment_scraper_service) do
     instance_double(Services::ApartmentScraperService)
   end
