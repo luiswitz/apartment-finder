@@ -27,6 +27,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.7'
   gem 'rubocop', '~> 0.49.1'
+  gem 'object_comparator', '~> 0.1.3'
 end
 
 group :development do
