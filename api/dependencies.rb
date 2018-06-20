@@ -6,5 +6,6 @@ class Dependencies < Nurse::DependencyContainer
   def initialize
     super
     add_factory(ApartmentScraperServiceFactory.new)
+    add_factory(TelegramBotAdapterFactory.new)
   end
 end
