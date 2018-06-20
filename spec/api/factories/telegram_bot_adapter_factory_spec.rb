@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe TelegramBotAdapterFactory do
@@ -19,11 +21,10 @@ RSpec.describe TelegramBotAdapterFactory do
   describe '#create_service' do
     before do
       allow(ENV).to receive(:[]).with('TELEGRAM_BOT_TOKEN')
-        .and_return('the-token')
-
+                                .and_return('the-token')
 
       allow(ENV).to receive(:[]).with('CHAT_ID')
-        .and_return('the-chat-id')
+                                .and_return('the-chat-id')
     end
 
     it 'has the correct key' do

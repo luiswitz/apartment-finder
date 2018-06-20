@@ -25,9 +25,9 @@ gem 'uglifier', '>= 1.3.0'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'dotenv-rails'
+  gem 'object_comparator', '~> 0.1.3'
   gem 'rspec-rails', '~> 3.7'
   gem 'rubocop', '~> 0.49.1'
-  gem 'object_comparator', '~> 0.1.3'
 end
 
 group :development do
