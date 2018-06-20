@@ -7,6 +7,7 @@ class ScrapApartments
 
   def perform
     scraper = Dependencies.new.get('apartment_scraper_service')
+    telegram_bot = Dependencies.new.get('api.adapters.telegram_bot_adapter')
 
     links = scraper.find_links
 
@@ -15,7 +16,7 @@ class ScrapApartments
 
       begin
         if apartment_link.save!
-          TelegramBotApi.send_message(link)
+          telegram_bot.send_message(apartment_link.link)
           apartment_link.update(sent: true)
         end
       rescue

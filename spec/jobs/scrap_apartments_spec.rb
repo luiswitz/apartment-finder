@@ -3,21 +3,45 @@
 require 'rails_helper'
 
 RSpec.describe ScrapApartments, type: :job do
-  include ActiveJob::TestHelper
+  subject { described_class.new }
 
-  subject { described_class }
+  let(:perform) { subject.perform }
 
-  let(:job) { subject.perform_later }
+  let(:apartment_scraper_service) do
+    instance_double(Services::ApartmentScraperService)
+  end
 
-  # TODO: Fix those examples
-  xdescribe '#perform' do
-    it 'queues the job' do
-      expect(job).to have_enqueued_sidekiq_job('ScrapApartments')
+  let(:telegram_bot) do
+    instance_double(Adapters::TelegramBotAdapter)
+  end
+
+  before do
+    allow_any_instance_of(Dependencies).to receive(:get)
+      .with('apartment_scraper_service')
+      .and_return(apartment_scraper_service)
+
+    allow_any_instance_of(Dependencies).to receive(:get)
+      .with('api.adapters.telegram_bot_adapter')
+      .and_return(telegram_bot)
+
+    allow(apartment_scraper_service).to receive(:find_links)
+      .and_return(['link'])
+
+    allow(telegram_bot).to receive(:send_message)
+      .with('link')
+  end
+
+  describe '#perform' do
+    it 'calls find_links method' do
+      subject.perform
+
+      expect(apartment_scraper_service).to have_received(:find_links)
     end
 
-    it 'executes perform' do
-      expect(subject).to receive(:perform)
-      perform_enqueued_jobs { job }
+    it 'calls send_message method' do
+      subject.perform
+
+      expect(telegram_bot).to have_received(:send_message)
     end
   end
 end
